@@ -3,7 +3,7 @@ def create_project_dir(directory):
 	if not os.path.exists(directory):
 		print 'creating project ' + directory
 		os.makedirs(directory)
-
+ 
 def create_data_files(project_name, base_url):
 	queue = project_name + '/queue.txt'
 	crawled = project_name + '/crawled.txt'
@@ -17,6 +17,15 @@ def write_file(path, data):
 	f.write(data)
 	f.close()
 
-create_data_files('test', 'http://collegexplorer.co.in/')
+def append_to_file(path, data):
+	with open(path, 'a') as file:
+		file.write(data + '\n')
+
+def delete_file_contents(path):
+	with open(path, 'w'):
+		pass #do nothing
+
+		
+
 
 
